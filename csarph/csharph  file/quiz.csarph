@@ -1,0 +1,66 @@
+using System;
+using System.Collections.Generic;
+
+class QuizProgram
+{
+    static void Main()
+    {
+        // Initialize quiz questions and answers
+        var quizQuestions = new List<string>
+        {
+            "What is the capital of France?",
+            "What is 2 + 2?",
+            "What is the largest planet in our solar system?",
+            "What is the chemical symbol for water?",
+            "Who wrote 'Romeo and Juliet'?"
+        };
+
+        var quizAnswers = new List<string>
+        {
+            "Paris",
+            "4",
+            "Jupiter",
+            "H2O",
+            "Shakespeare"
+        };
+
+        // Initialize variables
+        int score = 0;
+        int totalQuestions = 5;
+        Random random = new Random();
+
+        Console.WriteLine("Welcome to the Quiz Program!");
+
+        // Loop through a number of questions
+        for (int i = 0; i < totalQuestions; i++)
+        {
+            // Select a random question
+            int questionIndex = random.Next(quizQuestions.Count);
+            string question = quizQuestions[questionIndex];
+            string correctAnswer = quizAnswers[questionIndex];
+
+            // Ask the question
+            Console.WriteLine($"Question {i + 1}: {question}");
+            Console.Write("Your answer: ");
+            string userAnswer = Console.ReadLine();
+
+            // Check the answer
+            if (userAnswer.Equals(correctAnswer, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Correct!");
+                score++;
+            }
+            else
+            {
+                Console.WriteLine($"Wrong! The correct answer was: {correctAnswer}");
+            }
+
+            // Remove the asked question
+            quizQuestions.RemoveAt(questionIndex);
+            quizAnswers.RemoveAt(questionIndex);
+        }
+
+        // Output the final score
+        Console.WriteLine($"Quiz Over! Your final score is {score} out of {totalQuestions}");
+    }
+}

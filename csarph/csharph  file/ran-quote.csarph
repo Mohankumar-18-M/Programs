@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> quotes = new List<string>
+        {
+            "Quote-1",
+            "Quote-2",
+            "Quote-3",
+            "Quote-4",
+            "Quote-5"
+        };
+        Random random = new Random();
+        Console.WriteLine("Welcome! Press Enter to get a new quote, or type 'exit' to quit.");
+        while (true)
+        {
+            string input = Console.ReadLine().Trim().ToLower();
+
+            if (input == "exit")
+            {
+                break;
+            }
+            else
+            {
+                int index = random.Next(quotes.Count);
+                string selectedQuote = quotes[index];
+                Console.WriteLine(selectedQuote);
+                Console.WriteLine(); 
+                Console.WriteLine("Press Enter for another quote, or type 'exit' to quit.");
+            }
+        }
+
+        Console.WriteLine("Goodbye!");
+    }
+}

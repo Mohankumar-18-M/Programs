@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int minimumVotingAge = 18;
+        Console.Write("Please enter your age: ");
+        if (int.TryParse(Console.ReadLine(), out int age))
+        {
+            if (age >= minimumVotingAge)
+            {
+                Console.WriteLine("You are eligible to vote.");
+            }
+            else
+            {
+                Console.WriteLine("You are not eligible to vote yet.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid age as a number.");
+        }
+    }
+}

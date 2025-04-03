@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Floated Elements Example</title>
+<style>
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: lightblue;
+    float: left; 
+  }
+
+  .clear {
+    clear: both; 
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+  <div class="box">Box 4</div>
+  <div class="clear"></div> 
+</div>
+
+<p>This is the program to describe the Floating elements causes them to align next to each other horizontly,Element would wrap around floated boxes.this paragraph content after starts below the floated boxes.</p>
+
+</body>
+</html>

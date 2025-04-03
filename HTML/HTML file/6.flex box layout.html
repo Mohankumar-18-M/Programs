@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout Examples</title>
+    <style>
+        /* Navigation Bar CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between; /* Items spread evenly */
+            align-items: center; /* Center items vertically */
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px; /* Gap between items */
+        }
+        nav ul li {
+            padding: 10px;
+        }
+
+        /* Grid Layout CSS */
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to next row */
+            gap: 20px; /* Gap between items */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .grid-item {
+            flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+            height: 200px;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 200px;
+            font-size: 24px;
+        }
+
+        /* Centered Content CSS */
+        .container {
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+            height: 100vh; /* Full viewport height */
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <h1>Logo</h1>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Grid Layout -->
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+    </div>
+
+    <!-- Centered Content Layout -->
+    <div class="container">
+        <div class="content">
+            <h1>Welcome</h1>
+            <p>This is centered content using Flexbox.</p>
+        </div>
+    </div>
+</body>
+</html>

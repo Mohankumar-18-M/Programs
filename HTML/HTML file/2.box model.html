@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Example</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        header {
+            background-color: lightblue;
+        }
+
+        nav {
+            background-color: lightgreen;
+        }
+
+        main {
+            background-color: lightyellow;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section {
+            background-color: lightcoral;
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        aside {
+            background-color: lightgray;
+            flex: 0.3;
+        }
+
+        footer {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+<body>
+    <header class="box">
+        Header
+    </header>
+    <nav class="box">
+        Navigation
+    </nav>
+    <main class="box">
+        <section class="box">
+            Section
+        </section>
+        <aside class="box">
+            Aside
+        </aside>
+    </main>
+    <footer class="box">
+        Footer
+    </footer>
+</body>
+</html>

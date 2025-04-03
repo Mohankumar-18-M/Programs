@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning and Z-Index Example</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .relative-nav {
+            position: relative;
+            top: 60px; 
+            width: 100%;
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            z-index: 500;
+        }
+
+        main {
+            margin-top: 120px;
+            padding: 20px;
+        }
+
+        .static-section {
+            background-color: #007BFF;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .absolute-section {
+            position: absolute;
+            top: 200px;
+            right: 20px;
+            width: 300px;
+            background-color: #e0e0e0;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .relative-footer {
+            position: relative;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+            z-index: 300;
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed-header">
+        Fixed Header
+    </header>
+    <nav class="relative-nav">
+        Relative Nav
+    </nav>
+    <main>
+        <section class="static-section">
+            Static Section
+        </section>
+        <section class="absolute-section">
+            Absolute Section
+        </section>
+    </main>
+    <footer class="relative-footer">
+        Relative Footer
+    </footer>
+</body>
+</html>

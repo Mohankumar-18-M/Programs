@@ -1,0 +1,35 @@
+using System;
+
+class TextAnalyzer
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter your text (type 'END' on a new line to finish):");
+
+        string input;
+        string text = "";
+        int wordCount = 0;
+        int charCount = 0;
+        int lineCount = 0;
+
+        // Read lines from the console until 'END' is entered
+        while ((input = Console.ReadLine()) != "END")
+        {
+            text += input + "\n";
+            lineCount++;
+
+            // Count characters
+            charCount += input.Length;
+
+            // Count words
+            string[] words = input.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            wordCount += words.Length;
+        }
+
+        // Display the results
+        Console.WriteLine("\nText Analysis Results:");
+        Console.WriteLine($"Number of words: {wordCount}");
+        Console.WriteLine($"Number of characters: {charCount}");
+        Console.WriteLine($"Number of lines: {lineCount}");
+    }
+}

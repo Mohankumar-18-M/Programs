@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<string> tasks = new List<string>();
+
+    static void Main(string[] args)
+    {
+        bool exit = false;
+        while (!exit)
+        {
+            Console.WriteLine("To-Do List Application");
+            Console.WriteLine("1. Add Task");
+            Console.WriteLine("2. Delete Task");
+            Console.WriteLine("3. View Tasks");
+            Console.WriteLine("4. Exit");
+            Console.Write("Enter your choice (1-4): ");
+            string input = Console.ReadLine();
+            Console.WriteLine();
+            switch (input)
+            {
+                case "1":
+                    AddTask();
+                    break;
+                case "2":
+                    DeleteTask();
+                    break;
+                case "3":
+                    ViewTasks();
+                    break;
+                case "4":
+                    exit = true;
+                    break;
+                default:
+                    Console.WriteLine("Invalid input. Please enter a number from 1 to 4.");
+                    break;
+            }
+
+            Console.WriteLine();
+        }
+
+        Console.WriteLine("Exiting the program. Goodbye!");
+    }
+    static void AddTask()
+    {
+        Console.Write("Enter task to add: ");
+        string task = Console.ReadLine();
+        tasks.Add(task);
+        Console.WriteLine("Task added successfully.");
+    }
+    static void DeleteTask()
+    {
+        if (tasks.Count == 0)
+        {
+            Console.WriteLine("No tasks to delete.");
+            return;
+        }
+        Console.WriteLine("Current tasks:");
+        ViewTasks();
+        Console.Write("Enter index of task to delete (1-" + tasks.Count + "): ");
+        int index;
+        if (int.TryParse(Console.ReadLine(), out index))
+        {
+            if (index >= 1 && index <= tasks.Count)
+            {
+                tasks.RemoveAt(index - 1);
+                Console.WriteLine("Task deleted successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid index. Please enter a valid index.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid index number.");
+        }
+    }
+    static void ViewTasks()
+    {
+        if (tasks.Count == 0)
+        {
+            Console.WriteLine("No tasks available.");
+        }
+        else
+        {
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                Console.WriteLine((i + 1) + ". " + tasks[i]);
+            }
+        }
+    }
+}
